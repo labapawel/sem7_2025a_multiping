@@ -50,5 +50,12 @@ namespace sem7_2025a_multiping
             mysqlDataAdapter.Update(dt);
             loadData();
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            var p = new TaskPing("onet.pl", 10);
+            var odp = p.Ping();
+            label1.Text = $"Adres: {odp.Address} Time: {odp.RoundtripTime} TTL: {odp.Options.Ttl}";
+        }
     }
 }
